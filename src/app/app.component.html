@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f1334d;">
+  <div class="container d-flex justify-content-between">
+    <a class="navbar-brand text-white font-weight-bold" href="#" style="font-size: 2rem;">
+      TapMango SMS Monitor
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      style="margin-left: 50px;"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/filter">Overall Summary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/phone-stats">Phone Stats</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/account-stats">Account Stats</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="card border-0 shadow-sm">
+    <router-outlet></router-outlet>
+  </div>
+</div>

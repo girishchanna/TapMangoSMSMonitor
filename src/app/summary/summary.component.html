@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h2 class="stats-header">Messages Summary</h2>
+  
+    <div *ngIf="stats" class="stats-container">
+      <p class="stats-paragraph">
+        Total Messages Sent: <span class="stats-value">{{ stats.totalMessagesSent }}</span>
+      </p>
+      <p class="stats-paragraph">
+        Messages Sent Today: <span class="stats-value">{{ stats.messagesSentToday }}</span>
+      </p>
+      <p class="stats-paragraph">
+        Messages Per Second: <span class="stats-value">{{ stats.messagesPerSecond }}</span>
+      </p>
+  
+      <div *ngFor="let account of stats.accountStats" class="account-section">
+        <h4 class="account-header">Account ID: {{ account.accountId }}</h4>
+        <p class="stats-paragraph">
+          Total Messages Sent: <span class="stats-value">{{ account.totalMessagesSent }}</span>
+        </p>
+        <p class="stats-paragraph">
+          Messages Sent Today: <span class="stats-value">{{ account.messagesSentToday }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  

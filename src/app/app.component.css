@@ -1,0 +1,18 @@
+.navbar-brand {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 900px;
+}

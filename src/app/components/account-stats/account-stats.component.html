@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <h2>Account Stats</h2>
+  <form (ngSubmit)="getMessagesByDateRange()">
+    <div class="form-group">
+      <label for="accountId">Account ID</label>
+      <select class="form-control" id="accountId" [(ngModel)]="accountId" name="accountId">
+        <option *ngFor="let accountId of accountIds" [value]="accountId">{{ accountId }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="startDateTime">Start Date and Time &nbsp; &nbsp;</label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="startDateTime" name="startDateTime" placeholder="Start Date and Time">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </div>
+    <div class="form-group">
+      <label for="endDateTime">End Date and Time &nbsp; &nbsp; &nbsp;</label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="endDateTime" name="endDateTime" placeholder="End Date and Time">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Get Messages</button>
+    <br>
+    <br>
+    <span class="ml-3">Messages in Selected Period: {{ totalMessagesInPeriod }}</span>
+  </form>
+
+  <div *ngIf="messages.length > 0">
+    <h4>Messages</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let message of messages">
+        <strong>Account ID:</strong> {{ message.accountId }}<br>
+        <strong>Phone Number:</strong> {{ message.phoneNumber }}<br>
+        <strong>Message:</strong> {{ message.message }}<br>
+        <strong>Timestamp:</strong> {{ message.timestamp | date:'short' }}
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="messages.length === 0" class="alert alert-warning mt-3">
+    No messages sent and no details to show.
+  </div>
+</div>
